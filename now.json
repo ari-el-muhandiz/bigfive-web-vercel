@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "scope": "emskaplann",
+  "scope": "ari-el-muhandiz",
   "env": {
     "MONGODB_URI": "@mongodb_uri",
     "MONGODB_COLLECTION": "results",

@@ -293,9 +293,6 @@ export default {
   env: {
     API_URL: '/api/' // TODO: Fix for dev environment
   },
-  serverMiddleware: [
-    { path: "/api", handler: "~/api" },
-  ],
   build: {
     extractCSS: true,
     extend (config, ctx) {
