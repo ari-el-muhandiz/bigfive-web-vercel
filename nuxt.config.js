@@ -291,7 +291,7 @@ export default {
     }
   },
   env: {
-    API_URL: 'https://bigfive-web-vercel-6mvm99uln.vercel.app/api/' // TODO: Fix for dev environment
+    API_URL: 'https://bigfive-web-vercel.vercel.app/api/' // TODO: Fix for dev environment
   },
   build: {
     extractCSS: true,
