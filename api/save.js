@@ -1,3 +1,4 @@
+const fetch = require('isomorphic-unfetch');
 const connectToDb = require('./lib/connect-to-db')
 const validate = require('./lib/validate-test')
 const dbCollection = process.env.MONGODB_COLLECTION
