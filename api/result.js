@@ -11,12 +11,17 @@ const dbCollection = process.env.MONGODB_COLLECTION
 
 module.exports = async (req, res) => {
   const { query: { id, lang } } = req
+  const ipAdd = req.headers['x-real-ip']
   if (!id || !validMongoId(id)) {
     res.status(500).json({ type: 'error', message: 'Not a valid id' })
     return
   }
 
   try {
+    let geoLocations = {}
+    if (ipAdd) {
+      geoLocations = await fetch(`http://www.geoplugin.net/json.gp?ip=${ipAdd}`);
+    }
     const db = await connectToDb()
     const collection = db.collection(dbCollection)
     const data = await collection.findOne({ _id: ObjectId(id) })
@@ -34,7 +39,9 @@ module.exports = async (req, res) => {
       age: '',
       gender: '',
       nationality: '',
-      results
+      results,
+      geoLocations,
+      ipAdd
     })
     return
   } catch (error) {
