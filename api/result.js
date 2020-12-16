@@ -4,7 +4,7 @@ const connectToDb = require('./lib/connect-to-db')
 const getResult = require('@alheimsins/b5-result-text')
 const { getInfo } = require('@alheimsins/b5-result-text')
 const calculateScore = require('@alheimsins/bigfive-calculate-score')
-
+const fetch = require('isomorphic-unfetch');
 const { languages: availableLanguages } = getInfo()
 
 const dbCollection = process.env.MONGODB_COLLECTION
