@@ -52,11 +52,15 @@
             :label="$t('form.female')"
             color="secondary"
             value="Female"
+            :off-icon="mdiRadioboxBlank"
+            :on-icon="mdiRadioboxMarked"
           />
           <v-radio
             :label="$t('form.male')"
             color="secondary"
             value="Male"
+            :off-icon="mdiRadioboxBlank"
+            :on-icon="mdiRadioboxMarked"
           />
         </v-radio-group>
       </v-card-text>
