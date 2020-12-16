@@ -39,8 +39,8 @@ module.exports = async (req, res) => {
       payload['region'] = geoLocations['geoplugin_region']
       payload['country'] = geoLocations['geoplugin_countryName']
     }
-    const scores = calculateScore(data)
-    const results = getResult({ scores, lang: lang || data.lang || 'en' })
+    const scores = calculateScore(payload)
+    const results = getResult({ scores, lang: payload.lang || 'en' })
     payload['results'] = results;
     const data = await collection.insertOne(payload)
     res.send({ id: data.insertedId })
