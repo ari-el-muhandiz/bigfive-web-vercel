@@ -26,7 +26,12 @@ export default {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
       // { rel: 'preconnect', href: 'https://cdn.jsdelivr.net', crossorigin: true }
-    ]
+    ],
+    script: [
+      {
+        src: "http://www.geoplugin.net/javascript.gp",
+      },
+    ],
   },
   /*
   ** Customize the progress-bar color
